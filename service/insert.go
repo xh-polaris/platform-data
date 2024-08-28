@@ -3,9 +3,9 @@ package service
 import (
 	"context"
 	"fmt"
-	logx "github.com/xh-polaris/gopkg/util/log"
+	"github.com/xh-polaris/gopkg/util/log"
 	"github.com/xh-polaris/service-idl-gen-go/kitex_gen/platform/data"
-	"platform-data/domain"
+	"platform-data/infra"
 	"strings"
 )
 
@@ -15,12 +15,12 @@ type IInsertServer interface {
 
 type InsertServer struct {
 	IInsertServer
-	mapper domain.IEsMapper
+	mapper infra.IEsMapper
 }
 
 func NewInsertServer() *InsertServer {
 	return &InsertServer{
-		mapper: domain.NewEsMapper(),
+		mapper: infra.NewEsMapper(),
 	}
 }
 
@@ -39,7 +39,7 @@ func (server *InsertServer) Insert(_ context.Context, req *data.InsertReq) (bool
 
 		content = append(content, '\n')
 
-		logx.Info("%s : %s\n", string(meta), content)
+		log.Info("%s : %s\n", string(meta), content)
 
 		buf.Write(meta)
 		buf.Write(content)
