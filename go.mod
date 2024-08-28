@@ -1,12 +1,12 @@
 module platform-data
 
-go 1.21
-
-toolchain go1.21.13
+go 1.20
 
 replace github.com/apache/thrift => github.com/apache/thrift v0.13.0
 
 require (
+	github.com/bytedance/gopkg v0.0.0-20240514070511-01b2cbcf35e1
+	github.com/cloudwego/hertz v0.8.1
 	github.com/cloudwego/kitex v0.10.3
 	github.com/elastic/go-elasticsearch/v8 v8.9.0
 	github.com/kitex-contrib/obs-opentelemetry v0.2.7
@@ -19,7 +19,6 @@ require (
 	github.com/apache/thrift v0.16.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bufbuild/protocompile v0.10.0 // indirect
-	github.com/bytedance/gopkg v0.0.0-20240514070511-01b2cbcf35e1 // indirect
 	github.com/bytedance/sonic v1.12.2 // indirect
 	github.com/bytedance/sonic/loader v0.2.0 // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
@@ -29,7 +28,6 @@ require (
 	github.com/cloudwego/dynamicgo v0.2.9 // indirect
 	github.com/cloudwego/fastpb v0.0.4 // indirect
 	github.com/cloudwego/frugal v0.1.15 // indirect
-	github.com/cloudwego/hertz v0.8.1 // indirect
 	github.com/cloudwego/iasm v0.2.0 // indirect
 	github.com/cloudwego/localsession v0.0.2 // indirect
 	github.com/cloudwego/netpoll v0.6.3 // indirect
