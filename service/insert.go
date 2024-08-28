@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/xh-polaris/service-idl-gen-go/kitex_gen/platform/data"
+	"github.com/xh-polaris/gopkg/util/log"
 	"platform-data/domain"
 	"strings"
 )
@@ -38,6 +39,8 @@ func (server *InsertServer) Insert(_ context.Context, req *data.InsertReq) (bool
 
 		content = append(content, '\n')
 
+		log.Info("%s : %s\n", string(meta), content)
+		
 		buf.Write(meta)
 		buf.Write(content)
 	}
