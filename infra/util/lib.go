@@ -1,13 +1,12 @@
 package util
 
 import (
+	"platform-data/infra/util/log"
 	"strconv"
 	"sync"
 
 	"github.com/bytedance/gopkg/util/gopool"
 	"github.com/cloudwego/hertz/pkg/common/json"
-
-	"github.com/xh-polaris/meowchat-core-api/biz/infrastructure/util/log"
 )
 
 func JSONF(v any) string {
