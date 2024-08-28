@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"crypto/tls"
 	"errors"
+	logx "github.com/xh-polaris/gopkg/util/log"
 	"log"
 	"net/http"
 	"platform-data/config"
@@ -43,12 +44,12 @@ func (mapper *EsMapper) Insert(documents []byte) error {
 	res, err := mapper.es.Bulk(bytes.NewReader(documents))
 
 	if res != nil && res.IsError() {
-		log.Println(res.String())
+		logx.Info(res.String())
 		return errors.New("elastic search 可能存在语法错误")
 	}
 
 	if err != nil {
-		log.Println(err)
+		logx.Info("插入es时出现错误 : ", err)
 	}
 
 	return err
