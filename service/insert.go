@@ -34,9 +34,7 @@ func (server *InsertServer) Insert(_ context.Context, req *data.InsertReq) (bool
 
 		meta := []byte(fmt.Sprintf(`{ "index" : { "_index" : "%s" } }%s`, index, "\n"))
 
-		// 将单引号换成双引号避免违背es的语法
-		content := []byte(strings.ReplaceAll(doc.Tags, "'", "\""))
-
+		content := []byte(doc.Tags)
 		content = append(content, '\n')
 
 		log.Info("%s : %s\n", string(meta), content)
